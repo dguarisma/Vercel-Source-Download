@@ -27,44 +27,43 @@ Sistema completo para descargar todos los archivos de un deployment de Vercel, r
 ## 🚀 Uso
 
 ### Opción 1: Script de Shell (Recomendado)
-\`\`\`bash
+```
 chmod +x run.sh
 ./run.sh
-\`\`\`
+```
 
 ### Opción 2: Comandos directos
 
 **Descarga básica:**
-\`\`\`bash
+```
 node scripts/download-deployment.js
-\`\`\`
+```
 
 **Descarga avanzada con progreso:**
-\`\`\`bash
+``` bash
 node scripts/download-with-progress.js
-\`\`\`
+```
 
 **Descarga rápida:**
-\`\`\`bash
+``` bash
 node scripts/quick-start.js
-\`\`\`
+```
 
 **Analizar archivos descargados:**
-\`\`\`bash
+``` bash
 node scripts/file-analyzer.js
-\`\`\`
-
+```
 ### Opción 3: NPM Scripts
-\`\`\`bash
+``` bash
 npm run download          # Descarga básica
 npm run download-advanced # Descarga avanzada
 npm run analyze          # Analizar archivos
-\`\`\`
+```
 
 ## 📁 Estructura de Archivos
 
-\`\`\`
-vercel-deployment-downloader/
+```
+Vercel-Source-Download/
 ├── scripts/
 │   ├── download-deployment.js      # Descarga básica (ES Modules)
 │   ├── download-deployment-commonjs.js # Descarga básica (CommonJS)
@@ -76,18 +75,23 @@ vercel-deployment-downloader/
 ├── package.json                   # Configuración del proyecto
 ├── run.sh                        # Script de ejecución
 └── README.md                     # Este archivo
-\`\`\`
+```
 
-\`\`\`
+
 # Con ES Modules (requiere package.json)
+```
 node scripts/download-deployment.js
+```
 
 # Con CommonJS (funciona sin package.json)
+```
 node scripts/download-deployment-commonjs.js
+```
 
 # Descarga rápida
+```
 node scripts/quick-start.js
-\`\`\`
+```
 
 ## ⚙️ Características
 
@@ -115,9 +119,9 @@ node scripts/quick-start.js
 
 ### Error: "Cannot use import statement outside a module"
 **Solución:** Usa la versión CommonJS:
-\`\`\`bash
+```bash
 node scripts/download-deployment-commonjs.js
-\`\`\`
+```
 
 ### Error: "HTTP 401 Unauthorized"
 **Solución:** Verifica que tu token de Vercel sea válido y tenga permisos.
@@ -132,7 +136,7 @@ node scripts/download-deployment-commonjs.js
 
 Edita `scripts/download-config.js` para personalizar:
 
-\`\`\`javascript
+```javascript
 export const CONFIG = {
   BEARER_TOKEN: "tu_token_aqui",
   DEPLOYMENT_ID: "tu_deployment_id_aqui",
@@ -145,7 +149,7 @@ export const CONFIG = {
     EXCLUDE_DIRECTORIES: ["node_modules", ".git", ".next/cache"],
   },
 }
-\`\`\`
+```
 
 ## 📄 Licencia
 
